@@ -1,0 +1,183 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+  grid-template-rows: repeat(4, 80px);
+  gap: 3px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.tile {
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tile.corner:hover {
+  transform: scale(1.05) rotate(var(--rotation, 0deg));
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+.tile.fixed {
+  cursor: default;
+}
+.tile.fixed:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.tile.empty {
+  background-color: #000;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+.tile.start {
+  background-image: url("assets/start.png");
+  background-color: transparent;
+  border: none;
+}
+
+.tile.goal {
+  background-image: url("assets/goal.png");
+  background-color: transparent;
+  border: none;
+}
+
+.tile.corner {
+  background-image: url("assets/corner.png");
+  background-color: transparent;
+  border: none;
+}
+
+.tile.straight_h {
+  background-image: url("assets/straight.png");
+  background-color: transparent;
+  border: none;
+}
+
+.tile.straight_v {
+  background-image: url("assets/straight.png");
+  background-color: transparent;
+  border: none;
+}
+
+.tile.start::before,
+.tile.goal::before,
+.tile.corner::before,
+.tile.straight_h::before,
+.tile.straight_v::before {
+  content: none;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+}
+
+.status {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.status.success {
+  background: linear-gradient(45deg, rgba(76, 175, 80, 0.3), rgba(139, 195, 74, 0.3));
+  color: #FFD700;
+  font-size: 20px;
+  animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px #FFD700;
+  }
+  50% {
+    transform: scale(1.02);
+    text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .game-board {
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(4, 60px);
+  }
+
+  .tile {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* パズルのcss */
+/* Copilot ✨ ボタンの現状
+現在（2025年7月時点）、Copilotの✨は英語でコミットメッセージを出力するよう訓練されたAIが使われています
+ファイルの中に日本語が少しある程度では、切り替わらないのが実情です */

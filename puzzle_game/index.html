@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>パイプパズル</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>パイプパズル</h1>
+
+    <div class="game-board" id="game-board"></div>
+
+    <div class="controls">
+      <button class="btn" onclick="shuffleBoard()">シャッフル</button>
+      <button class="btn" onclick="resetBoard()">リセット</button>
+      <button class="btn" onclick="switchPuzzle()">パズル切り替え</button>
+      <button class="btn" onclick="showHint()">ヒント</button>
+    </div>
+
+    <div class="status" id="status">
+      コーナーピース（青い└）をクリックして回転させ、スタートからゴールまでの道を作ろう！
+    </div>
+  </div>
+
+  <script src="script.js"></script> <!-- ◎ グローバルに露出する -->
+
+</body>
+</html>

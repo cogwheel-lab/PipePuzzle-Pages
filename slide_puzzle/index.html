@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スライドパズル</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>3×3 スライドパズル</h1>
+  <div id="board"></div>
+
+  <div class="controls">
+    <button id="shuffle">シャッフル</button>
+    <button id="hint-toggle">ヒントOFF</button>
+    <button id="help">お手伝い</button>
+  </div>
+
+  <script src="script.js"></script>
+
+  <h2>遊び方</h2>
+  <ul>
+    <li><b>シャッフル:</b> ボタンを押すと、パネルの配置がランダムにシャッフルされます。</li>
+    <li><b>ヒントON/OFF:</b> ヒントをONにすると、現在正しい位置にあるパネルがハイライト表示されます。</li>
+    <li><b>お手伝い:</b> ボタンを押すと、コンピュータが最善の一手を自動で動かしてくれます。(3秒間のクールダウンがあります)</li>
+  </ul>
+</body>
+</html>
